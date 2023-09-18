@@ -2,7 +2,7 @@ import torch.nn.functional as F
 import numpy as np
 from pycm import *
 from matplotlib import pyplot as plt
-from differential_augmentation import *
+from augmentation import *
 from loss_func import *
 
 # 记录参数并上传wandb

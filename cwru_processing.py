@@ -8,8 +8,7 @@ import numpy as np
 from scipy.fft import fft
 import random
 
-from class_aware_sampler import ClassAwareSampler
-from differential_augmentation import *
+from augmentation import *
 
 def CWRU_DataLoader(d_path, length=2048, use_sliding_window=True,
                     train_number=1800,
@@ -20,10 +19,8 @@ def CWRU_DataLoader(d_path, length=2048, use_sliding_window=True,
                     IB_rate=10,
                     transforms_name=("AddGaussian", "RandomScale", "MaskNoise", "Translation"),
                     use_fft=False,
-                    use_sampler=False,
                     seed=46):
     """对数据进行预处理,返回train_X, train_Y, test_X, test_Y样本.
-    :param use_sampler: 使用重采样器
     :param use_fft: 使用fft预处理原始数据
     :param use_sliding_window: 用滑窗采样/随机取初始点采样(默认True,滑窗采样)
     :param d_path: 源数据地址
@@ -225,12 +222,7 @@ def CWRU_DataLoader(d_path, length=2048, use_sliding_window=True,
 
     torch.manual_seed(seed)  # pytorch random seed(打乱数据集用的随机数种子)
 
-    # 是否使用采样器平衡长尾样本
-    if use_sampler:
-        train_loader = DataLoader(train_dataset, batch_size=batch_size,
-                                sampler=ClassAwareSampler(Train_Y, 6))
-    else:
-        train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
+    train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
     valid_loader = DataLoader(valid_dataset, batch_size=batch_size, shuffle=True)
     test_loader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
     return train_loader, valid_loader, test_loader

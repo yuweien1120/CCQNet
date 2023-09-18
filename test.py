@@ -76,7 +76,6 @@ def test_main(config):
                     test_output1.append(output1)
 
             _, test_pred = torch.max(torch.vstack(test_output), dim=1)
-            # print(torch.vstack(test_output))
             tt_path = "test_target_" + config.datasets + '_' + 'IB' + str(config.IB_rate) + '_' + 'CCQNet' + '.pth'
             tp_path = "test_pred_" + config.datasets + '_' + 'IB' + str(config.IB_rate) + '_' + 'CCQNet' + '.pth'
             to1_path = "test_output1_" + config.datasets + '_' + 'IB' + str(config.IB_rate) + '_' + 'CCQNet' + '.pth'
@@ -154,4 +153,4 @@ if __name__ == '__main__':
 
     config.seed = 46
 
-test_main(config)
+    test_main(config)

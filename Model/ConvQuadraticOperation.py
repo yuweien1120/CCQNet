@@ -48,7 +48,6 @@ class ConvQuadraticOperation(nn.Module):
             init.uniform_(self.bias_r, -bound, bound)
 
     def reset_parameters(self) -> None:
-        # init.kaiming_uniform_(self.weight_r, a=math.sqrt(5))
         init.xavier_normal_(self.weight_r)
 
         self.__reset_bias()

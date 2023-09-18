@@ -87,13 +87,14 @@ def main(config):
             max_acc = acc
             # 存储模型参数
             torch.save(model.state_dict(), model_paths)
+            wandb.save(model_paths)
             print("save model")
     test_main(config)
 
 
 if __name__ == '__main__':
     # 定义wandb上传项目名
-    IB_rate = 50
+    IB_rate = 5
     # name = 'IB= ' + str(IB_rate) + ':' + '1'
     name = 'all_IB_rate'
     wandb.init(project="CCQNet", name=name)
@@ -102,7 +103,7 @@ if __name__ == '__main__':
     # 定义上传的超参数
     config = wandb.config
     # 数据集及其预处理
-    config.datasets = 'CWRU'  # 数据集
+    config.datasets = 'HIT'  # 数据集
     # 采样时使用数据增强生成增强样本,
     # 不用每次训练都做一次增强, 节省运行时间
     config.sample_trans_name = ("AddGaussian", "RandomScale", 'Randomstretch', "Randomcrop")
