@@ -6,7 +6,7 @@ import torch.optim as optim
 import numpy as np
 
 # 自定义的Dataloader
-from cwru_processing import CWRU_DataLoader
+from processing import CWRU_DataLoader
 
 # 记录参数并上传wandb
 from utils.metric import *
