@@ -27,11 +27,11 @@ where $\ast$ denotes the convolutional operation, $\odot$ denotes Hadamard produ
 
 We construct a cross-layer connection strategy for the quadratic convolutional network to improve its stability. We employ two residual blocks, referred to as QResBlocks, each composed of two Qlayers. 
 
-<img src="https://raw.githubusercontent.com/yuweien1120/readme-img/main/qresblock.png" style="zoom: 25%;" />
+![](https://raw.githubusercontent.com/yuweien1120/readme-img/main/qresblock.png)
 
 The structural parameters of the quadratic residual network backbone are presented as follows.
 
-<img src="https://raw.githubusercontent.com/yuweien1120/readme-img/main/structural%20parameters.png" style="zoom: 50%;" />
+![](https://raw.githubusercontent.com/yuweien1120/readme-img/main/structural%20parameters.png)
 
 
 
@@ -39,15 +39,15 @@ The structural parameters of the quadratic residual network backbone are present
 
 Inspired by the reweighting technique, we integrate this weight into the SCL loss function [2], and we thus have the class-weighted contrastive loss (CRCL) as:
 
-<img src="https://raw.githubusercontent.com/yuweien1120/readme-img/main/CRCL.png" style="zoom: 33%;" />
+![](https://raw.githubusercontent.com/yuweien1120/readme-img/main/CRCL.png)
 
 Compared to the original SCL loss function, for each $z_a$, we assign a weight $ W_a = \frac{1}{|\boldsymbol{P}_a|}$ for class $a$, $|\boldsymbol{P}_a|$ indicates the number of samples belonging to class $a$.
 
 ### Classifier Learning
 
-we use the logit adjusted cross-entropy loss function $\mathcal{L}^{LC}$ to drive the training of the classifier [3].
+We use the logit adjusted cross-entropy loss function $\mathcal{L}^{LC}$ to drive the training of the classifier [3].
 
- <img src="https://raw.githubusercontent.com/yuweien1120/readme-img/main/LC.png" style="zoom: 60%;" />
+ ![](https://raw.githubusercontent.com/yuweien1120/readme-img/main/LC.png)
 
 where $j \in J \equiv \{1, 2, \cdots, n\}$ are the indices of the raw data ${\boldsymbol x_1, \boldsymbol x_2, \cdots, \boldsymbol x_N}$, $f(\boldsymbol x_j)$ denotes the output of the classifier, i.e. logit. $f_{y_j}(\boldsymbol x_j)$ denotes the value of the element in the logit vector classified as label $y_j$. Let $[L]$ be a collection of labels $y'$ and $y' \in [L] \equiv \{1, 2, \cdots, L\}$, $\pi_{y_j}$ denotes the prior probability of the label $y_j$, and $\tau$ indicates temperature coefficient which is set to $\tau = 1$ in the developed approach.
 
@@ -55,15 +55,15 @@ where $j \in J \equiv \{1, 2, \cdots, n\}$ are the indices of the raw data ${\bo
 
 We find the connection between the quadratic convolution operation and signal autocorrelation. Mathematically, the quadratic convolutional operation can be decomposed into two parts: the sum of learnable autocorrelation and the conventional convolutional operation.
 
-<img src="https://raw.githubusercontent.com/yuweien1120/readme-img/main/Qx.png" style="zoom: 67%;" />
+![](https://raw.githubusercontent.com/yuweien1120/readme-img/main/Qx.png)
 
-<img src="https://raw.githubusercontent.com/yuweien1120/readme-img/main/qj.png" style="zoom: 67%;" />
+![](https://raw.githubusercontent.com/yuweien1120/readme-img/main/qj.png)
 
-<img src="https://raw.githubusercontent.com/yuweien1120/readme-img/main/qj1.png" style="zoom:67%;" />
+![](https://raw.githubusercontent.com/yuweien1120/readme-img/main/qj1.png)
 
 With the above decomposition, a quadratic network offers advantages over conventional neural networks when processing signals. The autocorrelation operation within a quadratic neuron aids in extracting valuable signals with random noise, while such capability is missing in conventional neural networks. The operations of the quadratic neuron are shown as follows.
 
-<img src="https://raw.githubusercontent.com/yuweien1120/readme-img/main/q_operation.png" style="zoom: 67%;" />
+![](https://raw.githubusercontent.com/yuweien1120/readme-img/main/q_operation.png)
 
 ## Repository organization
 
@@ -141,7 +141,7 @@ Here we give the main results of our paper. We use accuracy (ACC), F1 score, and
 
 We compared feature maps of our quadratic residual network and a ResNet backbone with the same structure. Both networks preserve local features of high amplitude in the input signal caused by fault-induced vibrations. However, as the network gets deeper, the quadratic network places more emphasis on these features, outperforming the conventional network.
 
-<img src="https://raw.githubusercontent.com/yuweien1120/readme-img/main/cmp_backbone.png" style="zoom: 67%;" />
+![](https://raw.githubusercontent.com/yuweien1120/readme-img/main/cmp_backbone.png)
 
 ### Learnable autocorrelation
 
