@@ -1,4 +1,4 @@
-# A Quadratic Network-based Class-weighted Supervised Contrastive Learning framework to Long-tailed Bearing Fault Diagnosis
+# A class-weighted supervised contrastive learning long-tailed bearing fault diagnosis approach using quadratic neural network
 
 This is the official repository of the paper "A Quadratic Network-based Class-weighted Supervised Contrastive Learning framework to Long-tailed Bearing Fault Diagnosis".
 
@@ -41,7 +41,7 @@ Inspired by the reweighting technique, we integrate this weight into the SCL los
 
 ![](https://raw.githubusercontent.com/yuweien1120/readme-img/main/CRCL.png)
 
-Compared to the original SCL loss function, for each $z_a$, we assign a weight $ W_a = \frac{1}{|\boldsymbol{P}_a|}$ for class $a$, $|\boldsymbol{P}_a|$ indicates the number of samples belonging to class $a$.
+Compared to the original SCL loss function, for each $z_a$, we assign a weight $W_a = \frac{1}{|\boldsymbol{P}_a|}$ for class $a$, $|\boldsymbol{P}_a|$ indicates the number of samples belonging to class $a$.
 
 ### Classifier Learning
 
