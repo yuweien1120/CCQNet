@@ -1,6 +1,6 @@
 # A class-weighted supervised contrastive learning long-tailed bearing fault diagnosis approach using quadratic neural network
 
-This is the official repository of the paper "A Quadratic Network-based Class-weighted Supervised Contrastive Learning framework to Long-tailed Bearing Fault Diagnosis".
+This is the official repository of the paper "[A class-weighted supervised contrastive learning long-tailed bearing fault diagnosis approach using quadratic neural network](https://arxiv.org/abs/2309.11717)".
 
 In this work,
 
