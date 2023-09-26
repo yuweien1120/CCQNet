@@ -9,6 +9,21 @@ In this work,
 
 All experiments are conducted with Linux-5.4.0 on an Intel Platinum 8255C CPU at 2.50GHz and one RTX 3080 10GB GPU. We implement our model on Python 3.8 with the PyTorch package, an open-source deep learning framework.  
 
+## Citing
+
+If you find this repo useful for your research, please consider citing it:
+
+```
+@article{yu2023class,
+  title={A class-weighted supervised contrastive learning long-tailed bearing fault diagnosis approach using quadratic neural network},
+  author={Yu, Wei-En and Sun, Jinwei and Zhang, Shiping and Zhang, Xiaoge and Liao, Jing-Xiao},
+  journal={arXiv preprint arXiv:2309.11717},
+  year={2023}
+}
+```
+
+
+
 ## CCQNet: Class-weighted Contrastive Learning Quadratic Network
 
 The CCQNet consists of a quadratic convolutional residual network backbone, a class-weighted contrastive learning branch, and a classifier branch employing logit-adjusted cross-entropy loss. 
