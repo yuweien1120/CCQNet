@@ -168,7 +168,7 @@ We visualized the autocorrelation operation term that weights set as 1 and the l
 
 If you have any questions about our work, please contact the following email address:
 
-22s001048@stu.hit.edu.cn
+24b953012@stu.hit.edu.cn
 
 Enjoy your coding!
 
